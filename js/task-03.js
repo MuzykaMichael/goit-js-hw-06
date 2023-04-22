@@ -14,10 +14,17 @@ const images = [
 ];
 
 const galerylist = document.querySelector(".gallery");
-images.forEach(image => {
-  const createimg = galerylist.insertAdjacentHTML("afterbegin", `<img src=${image.url} alt=${image.alt} />`)
+const defimg =[];
+const img = images.map(image => {
+  const newImg = `<img src=${image.url} alt=${image.alt} />`;
+  defimg.push(newImg);
   galerylist.style.backgroundColor = "teal";
   galerylist.style.display = "flex";
   galerylist.style.gap = "32px"
   galerylist.style.flexDirection = "column"
 })
+const createimg = galerylist.insertAdjacentHTML("afterbegin", `<img src=${img.url} alt=${img.alt} />`)
+
+defimg.forEach(img => {
+  galerylist.insertAdjacentHTML("afterbegin", `<img src=${img.url} alt=${img.alt} />`)
+});
