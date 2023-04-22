@@ -15,6 +15,4 @@ const createLi = ingredients.map(ingredient => {
   defArray.push(newIngredient)
 });
 
-defArray.forEach(li => {
-  lst.append(li);
-})
+lst.append(...defArray)
