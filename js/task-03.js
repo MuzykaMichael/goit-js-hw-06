@@ -15,15 +15,17 @@ const images = [
 
 const galerylist = document.querySelector(".gallery");
 
-const defimg =[];
-const img = images.map(image => {
-  const newImg = `<img src=${image.url} alt=${image.alt}/>`;
-  galerylist.style.backgroundColor = "teal";
-  galerylist.style.display = "flex";
-  galerylist.style.gap = "32px"
-  galerylist.style.flexDirection = "column"
-  defimg.push(newImg);
+const defimg ="";
+const img = images
+  .map(image => {
+  return`<img src=${image.url} alt=${image.alt}/>`;
+});
 
-})
 
-galerylist.insertAdjacentHTML("afterbegin", [...defimg]);
+galerylist.style.backgroundColor = "teal";
+galerylist.style.display = "flex";
+galerylist.style.gap = "32px"
+galerylist.style.flexDirection = "column"
+
+const createGallery = img.join(' ')
+galerylist.insertAdjacentHTML("afterbegin", createGallery);
