@@ -19,7 +19,7 @@ const defimg ="";
 const img = images
   .map(image => {
   return`<img src=${image.url} alt=${image.alt}/>`;
-});
+}).join(' ');
 
 
 galerylist.style.backgroundColor = "teal";
@@ -27,5 +27,4 @@ galerylist.style.display = "flex";
 galerylist.style.gap = "32px"
 galerylist.style.flexDirection = "column"
 
-const createGallery = img.join(' ')
-galerylist.insertAdjacentHTML("afterbegin", createGallery);
+galerylist.insertAdjacentHTML("afterbegin", img);
